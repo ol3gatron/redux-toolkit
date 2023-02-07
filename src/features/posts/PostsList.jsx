@@ -30,7 +30,6 @@ const PostsList = () => {
 
   return (
     <div>
-      <h1 className="title">Posts</h1>
       {content}
     </div>
   )
