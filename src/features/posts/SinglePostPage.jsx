@@ -5,10 +5,12 @@ import PostAuthor from "./PostAuthor"
 import TimeAgo from "./TimeAgo"
 import ReactionButtons from "./ReactionButtons"
 
-const SinglePostPage = () => {
-  // retrieve postId
+import { useParams } from "react-router-dom"
 
-  const post = useSelector((state) => selectPostById(state, postId)) // This selector retrieve two parameters: state for global state of our slice and postId for id of post that we need to load, post id comes from React Router Dom's params.
+const SinglePostPage = () => {
+  const {postId} = useParams()
+
+  const post = useSelector((state) => selectPostById(state, Number(postId)))
 
   if (!post) {
     return (
@@ -19,13 +21,14 @@ const SinglePostPage = () => {
   }
 
   return (
-    <article>
+    <article className="post">
       <h2>{post.title}</h2>
       <p>{post.body}</p>
       <p className="postCredit">
         <PostAuthor userId={post.userId} />
         <TimeAgo timestamp={post.date} />
       </p>
+      <ReactionButtons post={post}/>
     </article>
   )
 }
