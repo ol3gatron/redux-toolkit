@@ -7,6 +7,15 @@
   font-family: 'Quicksand', sans-serif;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  align-self: center;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -49,7 +58,8 @@ form {
 }
 
 button {
-  padding: 5px 0;
+  padding: 5px 10px;
+  margin: 5px;
   background-color: #fff;
   border: none;
   border: 1px solid black;

@@ -8,7 +8,7 @@ const PostAuthor = ({ userId }) => {
 
   return (
     <span>
-      by {author ? author.name : "Unknown author"}
+      &nbsp;by {author ? author.name : "Unknown author"}
     </span>
   )
 }
