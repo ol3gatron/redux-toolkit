@@ -14,6 +14,7 @@
 
 main {
   align-self: center;
+  margin-top: 60px;
 }
 
 header {
@@ -22,6 +23,8 @@ header {
   background-color: darkmagenta;
   color: #fff;
   padding: 10px;
+  position: fixed;
+  width: 100%;
 }
 
 header > h1 {
