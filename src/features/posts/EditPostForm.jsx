@@ -28,7 +28,7 @@ const EditPostForm = () => {
 
   const onTitleChanged = (e) => setTitle(e.target.value)
   const onContentChanged = (e) => setContent(e.target.value)
-  const onAuthorChanged = (e) => setUserId(e.target.value)
+  const onAuthorChanged = (e) => setUserId(Number(e.target.value))
 
   const canSave = [title, content, userId].every(Boolean) && requestStatus === "idle"
 
@@ -36,7 +36,7 @@ const EditPostForm = () => {
     if (canSave) {
       try {
         setRequestStatus("pending")
-        dispatch(updatePost({ id: post.id, body: content, userId, reactions: post.reactions })).unwrap()
+        dispatch(updatePost({ id: post.id, title, body: content, userId, reactions: post.reactions })).unwrap()
 
         setTitle("")
         setContent("")
