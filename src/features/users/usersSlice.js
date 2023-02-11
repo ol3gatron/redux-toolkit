@@ -22,9 +22,12 @@ export const usersSlice = createSlice({
     builder.addCase(fetchUsers.fulfilled, (state, action) => {
       return action.payload // Completly rewrites initialState
     })
-  }
+  },
 })
 
 export const selectAllUsers = (state) => state.users // Selector function
+
+export const selectUserById = (state, userId) =>
+  state.users.find((user) => user.id === userId)
 
 export default usersSlice.reducer
