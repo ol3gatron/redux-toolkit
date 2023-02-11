@@ -68,3 +68,7 @@ button {
   border: 1px solid black;
   border-radius: 4px;
 }
+
+.users > li > a {
+  color: black;
+}
